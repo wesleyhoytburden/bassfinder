@@ -1,1 +1,179 @@
-hello
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fishing Lure Selector</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #dff3ff;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #176b87;
+        }
+
+        select {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: 2px solid #176b87;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #176b87;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d4d63;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #eefaff;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎣 Fishing Lure Selector</h1>
+
+        <p>What does the water look like?</p>
+
+        <select id="waterColor">
+            <option value="">-- Pick Water Color --</option>
+            <option value="clear">Clear</option>
+            <option value="blue">Blue / Clear</option>
+            <option value="stained">Stained</option>
+            <option value="muddy">Muddy</option>
+            <option value="dark">Very Dark</option>
+        </select>
+
+        <br>
+
+        <button onclick="getLures()">Find My Lures</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+        function getLures() {
+
+            const water = document.getElementById("waterColor").value;
+            const result = document.getElementById("result");
+
+            if (water === "") {
+                result.innerHTML = "<p>Please pick a water color first!</p>";
+                return;
+            }
+
+            let recommendation = "";
+
+            if (water === "clear") {
+
+                recommendation = `
+                    <h2>💧 Clear Water</h2>
+                    <p><strong>Try:</strong></p>
+                    <ul>
+                        <li>Natural green pumpkin</li>
+                        <li>Shad colors</li>
+                        <li>Watermelon</li>
+                        <li>Small finesse lures</li>
+                    </ul>
+                    <p>Natural-looking lures are a good starting point when fish can see well.</p>
+                `;
+
+            } else if (water === "blue") {
+
+                recommendation = `
+                    <h2>🔵 Blue / Clear Water</h2>
+                    <p><strong>Try:</strong></p>
+                    <ul>
+                        <li>White</li>
+                        <li>Silver</li>
+                        <li>Shad patterns</li>
+                        <li>Natural greens</li>
+                    </ul>
+                    <p>Try matching the color of the baitfish in the area.</p>
+                `;
+
+            } else if (water === "stained") {
+
+                recommendation = `
+                    <h2>🟤 Stained Water</h2>
+                    <p><strong>Try:</strong></p>
+                    <ul>
+                        <li>Chartreuse</li>
+                        <li>White</li>
+                        <li>Black & blue</li>
+                        <li>Orange</li>
+                    </ul>
+                    <p>Use colors with good contrast so fish can find your lure.</p>
+                `;
+
+            } else if (water === "muddy") {
+
+                recommendation = `
+                    <h2>🟡 Muddy Water</h2>
+                    <p><strong>Try:</strong></p>
+                    <ul>
+                        <li>Bright chartreuse</li>
+                        <li>Orange</li>
+                        <li>Black</li>
+                        <li>Black & blue</li>
+                    </ul>
+                    <p>High-contrast colors and lures that create vibration can help fish locate the lure.</p>
+                `;
+
+            } else if (water === "dark") {
+
+                recommendation = `
+                    <h2>⚫ Very Dark Water</h2>
+                    <p><strong>Try:</strong></p>
+                    <ul>
+                        <li>Black</li>
+                        <li>Dark purple</li>
+                        <li>Black & blue</li>
+                        <li>Dark green</li>
+                    </ul>
+                    <p>Dark silhouettes can stand out better against lighter areas of the water.</p>
+                `;
+            }
+
+            result.innerHTML = recommendation;
+        }
+    </script>
+
+</body>
+</html>
+```
