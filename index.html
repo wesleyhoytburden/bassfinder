@@ -2,6 +2,7 @@
 
 <head>
     <title>Bass Finder 3000</title>
+     <link rel="icon" type="image/x-icon" href="fish.png">
 </head>
 
 <body>
@@ -22,10 +23,10 @@
 
     <button onclick="saveWater()">Save</button>
 
-    <h3>Colors allowed:</h3>
+    <h3>Colors:</h3>
     <ul id="colors"></ul>
 
-    <h3>Lures allowed:</h3>
+    <h3>Lures:</h3>
     <ul id="lures"></ul>
 
     <script>
@@ -36,7 +37,6 @@
             let colors = document.getElementById("colors");
             let lures = document.getElementById("lures");
 
-            // Clear old lists
             colors.innerHTML = "";
             lures.innerHTML = "";
 
@@ -52,7 +52,7 @@
 
                 lures.innerHTML = `
                     <li>Jerkbait</li>
-                    <li>Shad-colored Crankbait</li>
+                    <li>Crankbait</li>
                     <li>Finesse Worm</li>
                     <li>Drop Shot</li>
                     <li>Swimbait</li>
@@ -71,9 +71,9 @@
 
                 lures.innerHTML = `
                     <li>Finesse Worm</li>
-                    <li>Green Pumpkin Senko</li>
+                    <li>Senko</li>
                     <li>Drop Shot</li>
-                    <li>Natural Swimbait</li>
+                    <li>Swimbait</li>
                     <li>Jerkbait</li>
                 `;
             }
@@ -91,7 +91,7 @@
                 lures.innerHTML = `
                     <li>Spinnerbait</li>
                     <li>Chatterbait</li>
-                    <li>Squarebill Crankbait</li>
+                    <li>Crankbait</li>
                     <li>Texas Rig</li>
                     <li>Swimbait</li>
                 `;
@@ -108,8 +108,8 @@
                 `;
 
                 lures.innerHTML = `
-                    <li>Black/Blue Jig</li>
-                    <li>Squarebill Crankbait</li>
+                    <li>Jig</li>
+                    <li>Crankbait</li>
                     <li>Spinnerbait</li>
                     <li>Chatterbait</li>
                     <li>Texas Rig</li>
@@ -127,8 +127,8 @@
                 `;
 
                 lures.innerHTML = `
-                    <li>Red Crankbait</li>
-                    <li>Black/Blue Jig</li>
+                    <li>Crankbait</li>
+                    <li>Jig</li>
                     <li>Spinnerbait</li>
                     <li>Chatterbait</li>
                     <li>Texas Rig</li>
@@ -146,10 +146,10 @@
                 `;
 
                 lures.innerHTML = `
-                    <li>Black/Blue Jig</li>
-                    <li>Colorado Blade Spinnerbait</li>
+                    <li>Jig</li>
+                    <li>Spinnerbait</li>
                     <li>Chatterbait</li>
-                    <li>Bright Squarebill Crankbait</li>
+                    <li>Crankbait</li>
                     <li>Texas Rig</li>
                 `;
             }
